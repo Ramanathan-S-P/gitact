@@ -8,16 +8,16 @@ jobs:
   comment-on-issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Choose a random comment
-        id: random_comment
-        run: |
-          comments=("Thanks for opening this issue!" "We appreciate your feedback." "We'll look into this issue soon." "Your issue has been noted.")
-          echo "comment=${comments[$RANDOM % ${#comments[@]}]}" >> $GITHUB_ENV
-
-      - name: Comment on the issue
-        uses: peter-evans/create-or-update-comment@v1
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
         with:
-          issue-number: ${{ github.event.issue.number }}
-          body: ${{ env.comment }}
+          issue-number: 1
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
 
            
