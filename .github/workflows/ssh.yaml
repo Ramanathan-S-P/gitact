@@ -17,6 +17,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            echo "HI Connected"
-            ls -l >> /home/ubunutu/hi.log
+            echo "HI Connected" >> hi/log
           
