@@ -21,4 +21,5 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             echo "HI Connected" >> hi.log
+            git clone http://www.github.com/Ramanathan-S-P/gitact
           
