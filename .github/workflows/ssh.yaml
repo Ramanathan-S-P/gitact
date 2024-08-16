@@ -22,4 +22,7 @@ jobs:
           script: |
             echo "HI Connected" >> hi.log
             git clone http://www.github.com/Ramanathan-S-P/gitact
-          
+            cd gitact
+            git checkout staging
+            sudo mv index.html  /var/www/index.html
+            sudo systemctl restart nginx
